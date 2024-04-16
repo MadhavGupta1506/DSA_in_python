@@ -48,6 +48,16 @@ class LinkedList:
             count+=1
             itr=itr.next
         return (count)
+    def remove_last(self):
+        count=0
+        itr=self.head
+        while(count<self.len()-2):
+            itr=itr.next
+            count+=1
+        itr.next=None
+    def remove_head(self):
+        itr=self.head
+        self.head=itr.next
     def remove_index(self,index):
         if(index<0 or index>self.len()):
             raise Exception("Invalid index")
@@ -67,8 +77,11 @@ if(__name__=="__main__"):
     ll.insert_at_end(3)
     ll.insert_at_index(55,1)
     ll.insert_values([1,2,3,4,5,6,7])
-    ll.traversal()
-    ll.len()
     ll.remove_index(4)
     ll.traversal()
+    
+    ll.remove_last()
+    ll.remove_head()
+    ll.traversal()
     print(ll.len())
+    
