@@ -12,7 +12,6 @@ class LinkedList:
         node=Node(data,self.head)
         self.head=node
     def insert_at_end(self,data):
-        last=Node(data,self.head)
         itr=self.head
         if(self.head==None):
             self.head=Node(data,None)
