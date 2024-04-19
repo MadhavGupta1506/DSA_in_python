@@ -1,0 +1,30 @@
+a="10101100"
+b="01011101"
+m=max(len(a),len(b))
+a=list(a)
+b=list(b)
+while(len(a)!=m or len(b)!=m):
+    if(len(a)!=m):
+        a.insert(0,str(0))
+    else:
+        b.insert(0,str(0))
+st=""
+q=len(b)-1
+c=0
+while(q>=0):
+    s=int(a[q])+int(b[q])+c
+    if(s==2):
+        st+=str(0)
+        c=1
+    elif(s==3):
+        st+=str(1)
+        c=1
+    else:
+        st+=str(s)
+        c=0            
+    q-=1
+    
+if(c!=0):
+    st+=str(1)
+st=list(st)
+st.reverse()
